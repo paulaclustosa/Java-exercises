@@ -10,6 +10,7 @@ public class ReversedWord {
                 "Let's see a word in the reverse order? \n" +
                 "Please enter a word: ");
         String word = input.nextLine();
+
         reverse(word);
     }
 

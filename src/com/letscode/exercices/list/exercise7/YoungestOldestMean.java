@@ -5,20 +5,18 @@ import java.util.Scanner;
 public class YoungestOldestMean {
 
     public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
         Person[] people = new Person[5];
 
-        Scanner input = new Scanner(System.in);
         System.out.println("Please enter the following personal data: ");
-        String name;
-        int age;
         for (int i = 0; i < people.length; i++) {
             System.out.printf("%d.%n", i + 1);
 
             System.out.print("Name: ");
-            name = input.nextLine();
+            String name = input.nextLine();
 
             System.out.print("Age: ");
-            age = input.nextInt();
+            int age = input.nextInt();
             input.nextLine();
 
             people[i] = new Person(name, age);

@@ -5,9 +5,8 @@ import java.util.Scanner;
 public class EvenOdd {
 
     public static void main(String[] args) {
-        float[] numbers = new float[5];
-
         Scanner input = new Scanner(System.in);
+        float[] numbers = new float[5];
 
         for (int i = 0; i < numbers.length; i++) {
             System.out.print("Please enter a number: ");
@@ -15,16 +14,16 @@ public class EvenOdd {
         }
 
         System.out.println("The even numbers are: ");
-        for (int i = 0; i < numbers.length; i++) {
-            if (!(numbers[i] % 2 == 0)) {
-                System.out.println(numbers[i]);
+        for (float number : numbers) {
+            if (!(number % 2 == 0)) {
+                System.out.println(number);
             }
         }
 
         System.out.println("The odd numbers are: ");
-        for (int i = 0; i < numbers.length; i++) {
-            if (numbers[i] % 2 == 0) {
-                System.out.println(numbers[i]);
+        for (float number : numbers) {
+            if (number % 2 == 0) {
+                System.out.println(number);
             }
         }
     }

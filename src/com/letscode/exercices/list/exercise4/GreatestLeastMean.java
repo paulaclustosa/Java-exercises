@@ -5,10 +5,8 @@ import java.util.Scanner;
 public class GreatestLeastMean {
 
     public static void main(String[] args) {
-        float[] numbers = new float[5];
-
         Scanner input = new Scanner(System.in);
-
+        float[] numbers = new float[5];
         for (int i = 0; i < numbers.length; i++) {
             System.out.print("Please enter a number: ");
             numbers[i] = input.nextFloat();
@@ -16,16 +14,19 @@ public class GreatestLeastMean {
 
         System.out.print("The set ");
         printNumbers(numbers);
-        System.out.println(" has the following parameters:");
-        System.out.printf("Greatest number = %.2f%n", setGreatest(numbers));
-        System.out.printf("Least number = %.2f%n", setLeast(numbers));
-        System.out.printf("Mean = %.2f%n", calculateMean(numbers));
+        System.out.printf(" has the following parameters:%n" +
+                        "Greatest number = %.2f%n" +
+                        "Least number = %.2f%n" +
+                        "Mean = %.2f%n",
+                setGreatest(numbers),
+                setLeast(numbers),
+                calculateMean(numbers));
     }
 
     public static void printNumbers(float[] numbers) {
         System.out.print("{");
-        for (int i = 0; i < numbers.length; i++) {
-            System.out.printf(" %.2f ", numbers[i]);
+        for (float number : numbers) {
+            System.out.printf(" %.2f ", number);
         }
         System.out.print("}");
     }
