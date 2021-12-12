@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class UpperCase {
 
-    public static void main(String[] chars) {
+    public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         System.out.print("Please enter a word: ");
         char[] word = input.next().toCharArray();
