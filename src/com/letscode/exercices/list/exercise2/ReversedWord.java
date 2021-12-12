@@ -5,18 +5,29 @@ import java.util.Scanner;
 public class ReversedWord {
 
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
-        System.out.print("----- Welcome to the Reverse Word game ----- \n" +
-                "Let's see a word in the reverse order? \n" +
-                "Please enter a word: ");
-        String word = input.nextLine();
-
-        reverse(word);
+        printStartReverseWordGameMessage();
+        String word = readWord();
+        reverseWord(word);
     }
 
-    public static void reverse(String word) {
+    final static String START_REVERSE_WORD_PROGRAM_MESSAGE =
+            "----- Welcome to the Reverse Word game ----- \n" +
+                    "Let's see a word in the reverse order? \n" +
+                    "Please enter a word: ";
+
+    public static void printStartReverseWordGameMessage() {
+        System.out.print(START_REVERSE_WORD_PROGRAM_MESSAGE);
+    }
+
+    public static String readWord() {
+        Scanner input = new Scanner(System.in);
+        return input.nextLine();
+    }
+
+    public static void reverseWord(String word) {
         char[] letters = word.toCharArray();
 
+        System.out.printf("Reading %s backwards we have: ", word);
         for (int i = (letters.length - 1); i >= 0; i--) {
             System.out.printf("%c", letters[i]);
         }

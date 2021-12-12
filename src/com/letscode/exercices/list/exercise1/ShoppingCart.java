@@ -7,23 +7,32 @@ import java.util.Scanner;
 public class ShoppingCart {
 
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
-        List<String> list = new ArrayList<>();
-        final int totalItems = 5;
+        String[] fruits = new String[5];
 
-        System.out.println("----- Add fruit to shopping cart -----");
-        for (int i = 0; i < totalItems; i++) {
-            System.out.printf("fruit %d: ", i + 1, ";");
-            list.add(input.nextLine());
-        }
-
-        System.out.println("Your shopping cart has the following fruits:");
-        printItem(list);
+        printAddFruitsMessage();
+        readFruits(fruits);
+        printFruits(fruits);
     }
 
-    public static void printItem(List<String> list) {
-        for (int i = 0; i < list.size(); i++) {
-            System.out.printf("%s%n", list.get(i));
+    final static String ENTER_FRUIT_MESSAGE = "----- Hello! Please add fruits to shopping cart -----";
+    final static String DISPLAY_FRUITS_MESSAGE = "Your shopping cart has the following fruits:";
+
+    public static void printAddFruitsMessage() {
+        System.out.println(ENTER_FRUIT_MESSAGE);
+    }
+
+    public static void printFruits(String[] fruits) {
+        System.out.println(DISPLAY_FRUITS_MESSAGE);
+        for (int i = 0; i < fruits.length; i++) {
+            System.out.printf("- %s%n", fruits[i]);
+        }
+    }
+
+    public static void readFruits(String[] fruits) {
+        Scanner input = new Scanner(System.in);
+        for (int i = 0; i < fruits.length; i++) {
+            System.out.printf("fruit %d: ", i + 1, ";");
+            fruits[i] = input.nextLine();
         }
     }
 
