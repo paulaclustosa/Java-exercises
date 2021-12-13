@@ -16,16 +16,28 @@ public class OddEven {
     public static final String ODD_NUMBERS_MESSAGE = "The odd numbers are:";
     public static final String EVEN_NUMBERS_MESSAGE = "The even numbers are:";
 
+    public static void printEnterNumberMessage() {
+        System.out.print(ENTER_NUMBER_MESSAGE);
+    }
+
+    public static void printOddNumbersMessage() {
+        System.out.println(ODD_NUMBERS_MESSAGE);
+    }
+
+    public static void printEvenNumbersMessage() {
+        System.out.println(EVEN_NUMBERS_MESSAGE);
+    }
+
     public static void readNumbers(int[] numbers) {
         Scanner input = new Scanner(System.in);
         for (int i = 0; i < numbers.length; i++) {
-            System.out.print(ENTER_NUMBER_MESSAGE);
+            printEnterNumberMessage();
             numbers[i] = input.nextInt();
         }
     }
 
     public static void getOddNumbers(int[] numbers) {
-        System.out.println(ODD_NUMBERS_MESSAGE);
+        printOddNumbersMessage();
         for (float number : numbers) {
             if (!(number % 2 == 0)) {
                 System.out.println(number);
@@ -34,7 +46,7 @@ public class OddEven {
     }
 
     public static void getEvenNumbers(int[] numbers) {
-        System.out.println(EVEN_NUMBERS_MESSAGE);
+        printEvenNumbersMessage();
         for (float number : numbers) {
             if (number % 2 == 0) {
                 System.out.println(number);
