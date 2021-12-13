@@ -14,8 +14,8 @@ public class ShoppingCart {
         printFruits(fruits);
     }
 
-    final static String ENTER_FRUIT_MESSAGE = "----- Hello! Please add fruits to shopping cart -----";
-    final static String DISPLAY_FRUITS_MESSAGE = "Your shopping cart has the following fruits:";
+    public final static String ENTER_FRUIT_MESSAGE = "----- Hello! Please add fruits to shopping cart -----";
+    public final static String DISPLAY_FRUITS_MESSAGE = "Your shopping cart has the following fruits:";
 
     public static void printAddFruitsMessage() {
         System.out.println(ENTER_FRUIT_MESSAGE);

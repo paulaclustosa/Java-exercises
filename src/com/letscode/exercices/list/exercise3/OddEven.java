@@ -2,7 +2,7 @@ package com.letscode.exercices.list.exercise3;
 
 import java.util.Scanner;
 
-public class EvenOdd {
+public class OddEven {
 
     public static void main(String[] args) {
         int[] numbers = new int[5];
@@ -12,9 +12,9 @@ public class EvenOdd {
         getEvenNumbers(numbers);
     }
 
-    public static String ENTER_NUMBER_MESSAGE = "Please enter a number: ";
-    public static String ODD_NUMBERS_MESSAGE = "The odd numbers are:";
-    public static String EVEN_NUMBERS_MESSAGE = "The even numbers are:";
+    public static final String ENTER_NUMBER_MESSAGE = "Please enter a number: ";
+    public static final String ODD_NUMBERS_MESSAGE = "The odd numbers are:";
+    public static final String EVEN_NUMBERS_MESSAGE = "The even numbers are:";
 
     public static void readNumbers(int[] numbers) {
         Scanner input = new Scanner(System.in);

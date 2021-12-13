@@ -5,30 +5,41 @@ import java.util.Scanner;
 public class GuestList {
 
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
         char[][] guestList = new char[5][];
 
-        System.out.println("Please enter the name of your guests: ");
+        readGuestName(guestList);
+        char[] longestName = findLongestName(guestList);
+        printLongestName(longestName);
+    }
+
+    public static final String ENTER_GUESTS_NAMES = "Please enter the name of your guests: ";
+    public static final String LONGEST_NAME_MESSAGE = "The longest name of the guestList is: ";
+
+    public static void printEnterGuestsNames() {
+        System.out.println(ENTER_GUESTS_NAMES);
+    }
+
+    public static void readGuestName(char[][] guestList) {
+        Scanner input = new Scanner(System.in);
+        printEnterGuestsNames();
         for (int i = 0; i < guestList.length; i++) {
             System.out.printf("%d. ", i + 1);
             guestList[i] = input.nextLine().toCharArray();
         }
-
-        System.out.println("The longest name of the guestList is:");
-        printName(findLongestName(guestList));
     }
 
     public static char[] findLongestName(char[][] guestList) {
         char[] longestName = guestList[0];
-        for (char[] chars : guestList) {
-            if (chars.length > longestName.length) {
-                longestName = chars;
+        for (char[] guestNameLetter : guestList) {
+            if (guestNameLetter.length > longestName.length) {
+                longestName = guestNameLetter;
             }
         }
         return longestName;
     }
 
-    public static void printName(char[] longestName) {
+    public static void printLongestName(char[] longestName) {
+        System.out.print(LONGEST_NAME_MESSAGE);
         for (char letter : longestName) {
             System.out.print(letter);
         }

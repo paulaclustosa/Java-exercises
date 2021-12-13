@@ -5,33 +5,30 @@ import java.util.Scanner;
 public class GreatestLeastMean {
 
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
         float[] numbers = new float[5];
+
+        readNumber(numbers);
+        float greatestNumber = setGreatestNumber(numbers);
+        float leastNumber = setLeastNumber(numbers);
+        float mean = calculateMean(numbers);
+        printGreatestLeastMean(numbers, greatestNumber, leastNumber, mean);
+    }
+
+    public static final String ENTER_NUMBER_MESSAGE = "Please enter a number: ";
+
+    public static void printEnterNumberMessage() {
+        System.out.print(ENTER_NUMBER_MESSAGE);
+    }
+
+    public static void readNumber(float[] numbers) {
+        Scanner input = new Scanner(System.in);
         for (int i = 0; i < numbers.length; i++) {
-            System.out.print("Please enter a number: ");
+            printEnterNumberMessage();
             numbers[i] = input.nextFloat();
         }
-
-        System.out.print("The set ");
-        printNumbers(numbers);
-        System.out.printf(" has the following parameters:%n" +
-                        "Greatest number = %.2f%n" +
-                        "Least number = %.2f%n" +
-                        "Mean = %.2f%n",
-                setGreatest(numbers),
-                setLeast(numbers),
-                calculateMean(numbers));
     }
 
-    public static void printNumbers(float[] numbers) {
-        System.out.print("{");
-        for (float number : numbers) {
-            System.out.printf(" %.2f ", number);
-        }
-        System.out.print("}");
-    }
-
-    public static float setGreatest(float[] numbers) {
+    public static float setGreatestNumber(float[] numbers) {
         float greatestNumber = numbers[0];
         for (float number : numbers) {
             if (number > greatestNumber) {
@@ -41,7 +38,8 @@ public class GreatestLeastMean {
         return greatestNumber;
     }
 
-    public static float setLeast(float[] numbers) {
+
+    public static float setLeastNumber(float[] numbers) {
         float leastNumber = numbers[0];
         for (float number : numbers) {
             if (number < leastNumber) {
@@ -57,6 +55,21 @@ public class GreatestLeastMean {
             sum += number;
         }
         return sum / numbers.length;
+    }
+
+    public static void printGreatestLeastMean(float[] numbers, float greatestNumber,
+                                              float leastNumber, float mean) {
+        System.out.print("The set ");
+        System.out.print("[");
+        for (float number : numbers) {
+            System.out.printf(" %.2f ", number);
+        }
+        System.out.print("]");
+        System.out.printf(" has the following parameters:%n- Greatest number = %.2f%n" +
+                        "- Least number = %.2f%n" + "- Mean = %.2f",
+                greatestNumber,
+                leastNumber,
+                mean);
     }
 
 }

@@ -10,7 +10,7 @@ public class ReversedWord {
         reverseWord(word);
     }
 
-    final static String START_REVERSE_WORD_PROGRAM_MESSAGE =
+    public static final String START_REVERSE_WORD_PROGRAM_MESSAGE =
             "----- Welcome to the Reverse Word game ----- \n" +
                     "Let's see a word in the reverse order? \n" +
                     "Please enter a word: ";
