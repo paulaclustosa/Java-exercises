@@ -5,7 +5,8 @@ import java.util.Scanner;
 public class GuestList {
 
     public static void main(String[] args) {
-        char[][] guestList = new char[5][];
+        final int TOTAL_GUESTS = 5;
+        char[][] guestList = new char[TOTAL_GUESTS][];
 
         readGuestName(guestList);
         char[] longestName = findLongestName(guestList);
@@ -30,9 +31,9 @@ public class GuestList {
 
     public static char[] findLongestName(char[][] guestList) {
         char[] longestName = guestList[0];
-        for (char[] guestNameLetter : guestList) {
-            if (guestNameLetter.length > longestName.length) {
-                longestName = guestNameLetter;
+        for (char[] guestName : guestList) {
+            if (guestName.length > longestName.length) {
+                longestName = guestName;
             }
         }
         return longestName;

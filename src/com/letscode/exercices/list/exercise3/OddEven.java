@@ -5,14 +5,15 @@ import java.util.Scanner;
 public class OddEven {
 
     public static void main(String[] args) {
-        int[] numbers = new int[5];
+        final int TOTAL_NUMBERS = 5;
+        int[] numbers = new int[TOTAL_NUMBERS];
 
         readNumbers(numbers);
         getOddNumbers(numbers);
         getEvenNumbers(numbers);
     }
 
-    public static final String ENTER_NUMBER_MESSAGE = "Please enter a number: ";
+    public static final String ENTER_NUMBER_MESSAGE = "Please enter an integer number: ";
     public static final String ODD_NUMBERS_MESSAGE = "The odd numbers are:";
     public static final String EVEN_NUMBERS_MESSAGE = "The even numbers are:";
 

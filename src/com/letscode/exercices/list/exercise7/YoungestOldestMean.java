@@ -5,27 +5,41 @@ import java.util.Scanner;
 public class YoungestOldestMean {
 
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
-        Person[] people = new Person[5];
+        final int TOTAL_PEOPLE = 5;
+        Person[] people = new Person[TOTAL_PEOPLE];
+        readData(people);
 
-        System.out.println("Please enter the following personal data: ");
+        Person youngest = findYoungest(people);
+        Person oldest = findOldest(people);
+        int averageAge = calculateAverageAge(people);
+
+        printYoungest(youngest);
+        printOldest(oldest);
+        printAverageAge(averageAge);
+
+    }
+
+    public static final String ENTER_DATA_MESSAGE = "Please enter the following personal data:";
+
+    public static void printEnterDataMessage() {
+        System.out.println(ENTER_DATA_MESSAGE);
+    }
+
+    public static void readData(Person[] people) {
+        Scanner input = new Scanner(System.in);
+
+        printEnterDataMessage();
         for (int i = 0; i < people.length; i++) {
             System.out.printf("%d.%n", i + 1);
 
-            System.out.print("Name: ");
-            String name = input.nextLine();
+            System.out.print("First name: ");
+            String name = input.next();
 
             System.out.print("Age: ");
             int age = input.nextInt();
-            input.nextLine();
 
             people[i] = new Person(name, age);
         }
-
-        printYoungest(findYoungest(people));
-        printOldest(findOldest(people));
-        printAverageAge(calculateAverageAge(people));
-
     }
 
     public static Person findYoungest(Person[] people) {
@@ -70,4 +84,5 @@ public class YoungestOldestMean {
         System.out.printf("The average age of the entry people is %d" +
                 " years old.", averageAge);
     }
+
 }

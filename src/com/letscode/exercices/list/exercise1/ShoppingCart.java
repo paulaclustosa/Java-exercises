@@ -1,15 +1,13 @@
 package com.letscode.exercices.list.exercise1;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 public class ShoppingCart {
 
     public static void main(String[] args) {
-        String[] fruits = new String[5];
+        final int TOTAL_FRUITS = 5;
+        String[] fruits = new String[TOTAL_FRUITS];
 
-        printAddFruitsMessage();
         readFruits(fruits);
         printFruits(fruits);
     }
@@ -23,15 +21,16 @@ public class ShoppingCart {
 
     public static void printFruits(String[] fruits) {
         System.out.println(DISPLAY_FRUITS_MESSAGE);
-        for (int i = 0; i < fruits.length; i++) {
-            System.out.printf("- %s%n", fruits[i]);
+        for (String fruit : fruits) {
+            System.out.printf("- %s%n", fruit);
         }
     }
 
     public static void readFruits(String[] fruits) {
+        printAddFruitsMessage();
         Scanner input = new Scanner(System.in);
         for (int i = 0; i < fruits.length; i++) {
-            System.out.printf("fruit %d: ", i + 1, ";");
+            System.out.printf("Fruit %d: ", i + 1);
             fruits[i] = input.nextLine();
         }
     }

@@ -38,5 +38,5 @@ public class UpperCase {
             System.out.print(letter);
         }
     }
-
+    
 }

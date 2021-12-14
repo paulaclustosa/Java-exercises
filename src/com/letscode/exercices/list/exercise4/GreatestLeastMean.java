@@ -5,7 +5,8 @@ import java.util.Scanner;
 public class GreatestLeastMean {
 
     public static void main(String[] args) {
-        float[] numbers = new float[5];
+        final int TOTAL_NUMBERS = 5;
+        float[] numbers = new float[TOTAL_NUMBERS];
 
         readNumber(numbers);
         float greatestNumber = setGreatestNumber(numbers);
@@ -37,7 +38,6 @@ public class GreatestLeastMean {
         }
         return greatestNumber;
     }
-
 
     public static float setLeastNumber(float[] numbers) {
         float leastNumber = numbers[0];
