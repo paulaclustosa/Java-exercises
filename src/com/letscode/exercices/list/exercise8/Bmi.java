@@ -49,7 +49,7 @@ public class Bmi {
     }
 
     public static void printEndMessage() {
-        System.out.println("---------- The End! ----------");
+        System.out.println(THE_END_MESSAGE);
     }
 
 }
